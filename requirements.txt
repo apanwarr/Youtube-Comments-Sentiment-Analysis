@@ -1,0 +1,12 @@
+streamlit
+selenium
+webdriver-manager
+transformers
+pandas
+plotly
+torch
+tensorflow
+tf-keras
+ipykernel
+ipywidgets
+nbformat
