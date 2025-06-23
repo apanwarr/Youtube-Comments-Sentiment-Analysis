@@ -12,7 +12,10 @@ def get_youtube_comments(video_url, max_comments=1000):
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--disable-gpu")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager(driver_version="137.0.7151.120").install()),
+    options=options)
 
     st.info("🚀 Opening video...")
     driver.get(video_url)
@@ -51,7 +54,7 @@ st.markdown("""
             background-color: #7209b7;
             color: white;
             font-size: 16px;
-            padding: 10px 24px;
+            padding: 5px 24px;
             border-radius: 8px;
         }
     </style>
@@ -59,7 +62,6 @@ st.markdown("""
 
 st.title("📺 YouTube Comments Sentiment Analysis")
 st.markdown("## 🎯 Extract YouTube comments, analyze sentiment, and visualize results beautifully!")
-st.markdown("### ✨ Powered by: **MHS Bytebits** 🤖")
 
 # Input Layout
 col1, col2 = st.columns([2, 2])
